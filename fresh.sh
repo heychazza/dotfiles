@@ -2,6 +2,9 @@
 
 echo "Setting up your Mac..."
 
+# Remove 1Password from Applications as we will install it via Homebrew
+rm -rf /Applications/1Password.app
+
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
