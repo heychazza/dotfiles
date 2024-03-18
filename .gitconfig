@@ -1,0 +1,25 @@
+[user]
+    name = Charlie Joseph
+    email = ch@rli.es
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBDJnrTMbrFoh81u8R3tdkljylYbwAqHo2StSRn4pzMV
+[commit]
+    gpgsign = true
+[tag]
+    gpgsign = true
+[core]
+    autocrlf = input
+    excludesfile = $HOME/.dotfiles/.gitignore_global
+[init]
+    defaultBranch = main
+[gpg]
+    format = ssh
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[gpg "ssh"]
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[push]
+    autoSetupRemote = true
+    default = simple
